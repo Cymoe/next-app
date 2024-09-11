@@ -1,8 +1,17 @@
+'use client'
 import React from 'react'
+import { useRouter } from 'next/navigation'
+
 
 const NewUserPage = () => {
+
+  const router = useRouter()  
+
   return (
-    <div>New User Page</div>
+    <div>
+      <button className='btn' 
+      onClick={() => router.push('/users')}>Create</button>
+    </div>
   )
 }
 
