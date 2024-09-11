@@ -1,0 +1,37 @@
+import React from 'react'
+
+
+interface User {
+    id: number
+    name: string
+    email: string
+}
+
+interface UserTableProps {
+    users: User[]
+}
+
+const UserTable = async () => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/users')
+    const users: User[] = await res.json()
+    return (
+        <table className='table table-auto table-zebra table-compact table-bordered'>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {users.map((user: User) => (
+                    <tr key={user.id}>
+                        <td>{user.name}</td>
+                        <td>{user.email}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+    )
+}
+
+export default UserTable
