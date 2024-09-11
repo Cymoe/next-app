@@ -17,5 +17,12 @@
 body {
   color: rgb(var(--foreground-rgb));
   color: black;
-  padding: 1rem;
+}
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+    @apply font-bold;
+    @apply mb-3;
+  }
 }
